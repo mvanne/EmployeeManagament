@@ -15,7 +15,7 @@ namespace PersonDBMVCApp.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "MAHI page.";
+            ViewBag.Message = "MAHI World";
 
             return View();
         }
