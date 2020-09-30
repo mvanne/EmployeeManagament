@@ -12,3 +12,10 @@ client_id:CBJCHBCAABAAkIPWUP35T0TMjWyxaS8ZbyLtjXVHVsEw
 client_secret:nik-UwoNWNE4TghSJ1GsYzTF1mZq_L2P
 redirect_uri:https://www.google.com
 grant_type:authorization_code
+
+{
+    "access_token": "3AAABLblqZhAKrl4bGYQvKSm3-EqC0DXMKMdF_riw4TaAJULlUK2Cr3Krerl-ppE8jnGIXungLFIzJabANYlNtH6Ptuj4NnDm",
+    "refresh_token": "3AAABLblqZhCNb_wvy49SrMVGgCivPfAqFaTA41UZf3gRa-OsvFTCFmMVx6aKkjK8eAb_gtT8Ah8*",
+    "token_type": "Bearer",
+    "expires_in": 3600
+}
