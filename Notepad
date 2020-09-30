@@ -6,3 +6,9 @@ https://www.google.com/?code=CBNCKBAAHBCAABAA_qxVH8DU83mK5rmpEkq5ePo3bEo-UCS8&ap
 
 https://secure.na1.echosign.com/public/static/oauthDoc.jsp#accessTokenRequest
 
+
+code:CBNCKBAAHBCAABAALu4L5ncbSknGuC7vmLPPBHmumQ5wMBKE
+client_id:CBJCHBCAABAAkIPWUP35T0TMjWyxaS8ZbyLtjXVHVsEw
+client_secret:nik-UwoNWNE4TghSJ1GsYzTF1mZq_L2P
+redirect_uri:https://www.google.com
+grant_type:authorization_code
