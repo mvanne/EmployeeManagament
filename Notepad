@@ -7,14 +7,26 @@ https://www.google.com/?code=CBNCKBAAHBCAABAA_qxVH8DU83mK5rmpEkq5ePo3bEo-UCS8&ap
 https://secure.na1.echosign.com/public/static/oauthDoc.jsp#accessTokenRequest
 
 
+URL:
+====
+
+https://secure.na2.echosign.com/oauth/token
+
+BODY
+x-www
+======
+
 code:CBNCKBAAHBCAABAALu4L5ncbSknGuC7vmLPPBHmumQ5wMBKE
 client_id:CBJCHBCAABAAkIPWUP35T0TMjWyxaS8ZbyLtjXVHVsEw
 client_secret:nik-UwoNWNE4TghSJ1GsYzTF1mZq_L2P
 redirect_uri:https://www.google.com
 grant_type:authorization_code
 
+
+Response:
+=========
 {
-    "access_token": "3AAABLblqZhAKrl4bGYQvKSm3-EqC0DXMKMdF_riw4TaAJULlUK2Cr3Krerl-ppE8jnGIXungLFIzJabANYlNtH6Ptuj4NnDm",
+    "access_token": "3AAABLblqZhBaLQsHYzuBsuRlHrCyFDIsmevlfO-j-TdQTvj54oOmGyh1tTZMQuZNk42j4g8jtZeh9BmBJb86vlbGSdHKcVDT",
     "refresh_token": "3AAABLblqZhCNb_wvy49SrMVGgCivPfAqFaTA41UZf3gRa-OsvFTCFmMVx6aKkjK8eAb_gtT8Ah8*",
     "token_type": "Bearer",
     "expires_in": 3600
