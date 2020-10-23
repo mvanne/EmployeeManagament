@@ -38,21 +38,109 @@ Response:
 modal pop up:
 ==================
 
+Parent.Chtml
+------------
+
+<script type="text/javascript">function showInPopup(url, title) {
+        //alert('Called');
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (res) {
+                //alert(res);
+                $("#form-modal .modal-body").html(res);
+                $("#form-modal .modal-title").html(title);
+                $("#form-modal").modal('show');
+            }
+        });
+    }</script>
+
+
+
+ <div class="form-group">
+            Documents : 
+            <input onclick="showInPopup('@Url.Action("UploadFile","Claim",new { id = Model.Id })','')" value="Upload File" class="btn btn-default" />  
+ </div>
+
+
 
 <div class="modal" tabindex="-1" role="dialog" id="form-modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    
-                </div>
-               
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+Child.chtml
+------------
+
+@using (Html.BeginForm("UploadFileActionName", "ControllerName", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("Upload File: ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <table>
+                    <tr>
+                        @*<td> Upload File:</td>*@
+                        <td>@Html.TextBox("file", "", new { type = "file" }) </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" class="btn btn-danger" />
             </div>
         </div>
     </div>
+}
 
+ControllerName.cs
+=================
+
+public ActionResult UploadFile(int id)
+        {
+            TempData["id"] = id;
+            return View("FileUploadChildView");
+        }
+
+        [HttpPost]
+        public ActionResult UploadFile(HttpPostedFileBase file)
+        {
+            try
+            {
+                //Upload File
+                string _path = string.Empty;
+                if (file.ContentLength > 0)
+                {
+                    string _FileName = Path.GetFileName(file.FileName);
+                    _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
+                    file.SaveAs(_path);
+                }
+               
+                return View("ParentView", Model);
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
