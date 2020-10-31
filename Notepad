@@ -35,25 +35,45 @@ Response:
 
 
 
-
 <script>
     $(document).ready(function () {
+        $(".form-submit").submit(function () {
+            $("#btnSave").hide();
+            $("#btnSubmit").hide();
+            $("#btnReSubmitEmail").hide();
+            $("#btnSubmitEmail").hide();
+        });
 
-        $('#btnSave').on('click',
-            function (event) {
-                var form = $("#idMyForm");
-                form.validate();
-
-               
-                if (form.valid()) {
-                    $('#btnSave').val('Saving...');
-                    $('#btnSave').prop('disabled', true);
-                    $('#idMyForm').submit();
-                }
-              
-              
-            });
 
     });
-</script>
 
+    $("#rbIsRepUSA").click(function () {
+        if ($(this).is(":checked")) {
+            $("#Questionnaire_RepCountryID").prop("disabled", true).val('');
+            $("#Questionnaire_RepStateID").prop("hidden", false);
+            $("#Questionnaire_RepProvince").prop("hidden", true).val('');
+            $("#Questionnaire_RepZip").prop("hidden", false);
+            $("#Questionnaire_RepPostalcode").prop("hidden", true).val('');
+            $("#lblRepStateID").prop("hidden", false);
+            $("#lblRepProvince").prop("hidden", true);
+            $("#lblRepZip").prop("hidden", false);
+            $("#lblRepPostalcode").prop("hidden", true);
+
+        }
+    })
+
+    $("#rbIsRepInternational").click(function () {
+        if ($(this).is(":checked")) {
+            $("#Questionnaire_RepCountryID").prop("disabled", false);
+            $("#Questionnaire_RepStateID").prop("hidden", true).val('');
+            $("#Questionnaire_RepProvince").prop("hidden", false);
+            $("#Questionnaire_RepZip").prop("hidden", true).val('');
+            $("#Questionnaire_RepPostalcode").prop("hidden", false);
+            $("#lblRepStateID").prop("hidden", true);
+            $("#lblRepProvince").prop("hidden", false);
+            $("#lblRepZip").prop("hidden", true);
+            $("#lblRepPostalcode").prop("hidden", false);
+
+        }
+    })
+</script>
