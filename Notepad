@@ -35,14 +35,12 @@ Response:
 
 
 
-                            @Html.DropDownListFor(model => model.CallerSuffixID,
-                                                   new List<SelectListItem> {
-                                                        new SelectListItem { Value = "0" , Text = "" },
-                                                        new SelectListItem { Value = "1" , Text = "Sr" },
-                                                        new SelectListItem { Value = "2" , Text = "Jr" },
-                                                        new SelectListItem { Value = "2" , Text = "II" },
-                                                        new SelectListItem { Value = "2" , Text = "III" },
-                                                        new SelectListItem { Value = "2" , Text = "IV" },
-                                                        new SelectListItem { Value = "2" , Text = "V" }
-                                                     },
-                                                   new { @class = "form-control" })
+@Html.DropDownListFor(model => model.SuffixID,
+           new List<SelectListItem> {
+                new SelectListItem { Value = "0" , Text = "" },
+                new SelectListItem { Value = "1" , Text = "Sr" },
+                new SelectListItem { Value = "2" , Text = "Jr" },
+                new SelectListItem { Value = "3" , Text = "Mr" },
+                new SelectListItem { Value = "4" , Text = "Mss" }
+             },
+           new { @class = "form-control" })
