@@ -145,3 +145,16 @@ Please wait Spinner MVC html
     }
 </style>
 
+
+Default enter key to button - jquery
+=====================================
+
+  $('body').keypress(function(e) {
+       if (e.which === 13) {
+          $("input[value='OK']").trigger('click');
+       }
+    });
+    
+     <input type="submit" name="SubmitButton" value="Reset" />
+    <input type="submit" name="SubmitButton" value="OK" />
+    <input type="submit" name="SubmitButton" value="Back" />
