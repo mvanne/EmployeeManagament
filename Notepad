@@ -33,6 +33,45 @@ Response:
     "expires_in": 3600
 }
 
+
+
+Retain Scroll Position on save:
+===============================
+
+Method 1:
+---------
+
+$(function() {
+   $(window).unload(function() {
+      var scrollPosition = $("div#element").scrollTop();
+      localStorage.setItem("scrollPosition", scrollPosition);
+   });
+   if(localStorage.scrollPosition) {
+      $("div#element").scrollTop(localStorage.getItem("scrollPosition"));
+   }
+});
+
+
+Method 2:
+---------
+
+<script>
+    $(document).scroll(function () {
+        localStorage['page'] = document.URL;
+        localStorage['scrollTop'] = $(document).scrollTop();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+
+        if (localStorage['page'] == document.URL) {
+            $(document).scrollTop(localStorage['scrollTop']);
+        }
+});
+</script>
+
 Please wait Spinner MVC html
 ===================================
 
