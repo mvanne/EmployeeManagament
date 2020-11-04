@@ -158,3 +158,10 @@ Default enter key to button - jquery
      <input type="submit" name="SubmitButton" value="Reset" />
     <input type="submit" name="SubmitButton" value="OK" />
     <input type="submit" name="SubmitButton" value="Back" />
+    
+    
+
+Email Address Validation MVC - Property Annotation
+=====================================================
+[EmailAddress(ErrorMessage = "Invalid Email Address")]
+public string Email { get; set; }
