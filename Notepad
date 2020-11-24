@@ -1,1 +1,27 @@
- Click <a href="../Docs/DocumentsList.pdf" style="color: blue; text-decoration: underline" target="_blank">here</a> 
+
+ <style>
+   
+      .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       color: white;
+       text-align: center;
+       background-color: #6A737B; 
+       min-height: 50px;
+       margin-bottom:0px;
+       line-height:50px;
+       z-index:9999;
+       }
+      body{
+          margin-bottom:50px;
+      }
+
+ </style>
+
+ <div class="card footer">
+    <div >
+        <asp:Label ID="lblDisclaimer" ForeColor="white" runat="server" CssClass="labelSize17">© 2020 ABC Company. All rights reserved.</asp:Label>
+    </div>
+ </div>
